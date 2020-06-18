@@ -7,7 +7,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.buildings {
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border: 1px solid black;
+}
+
+.building {
+  width: 50px;
+  height: 75px;
+  background-color: dodgerblue;
+  margin: 0 5px;
 }
