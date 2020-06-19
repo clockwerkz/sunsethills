@@ -7,8 +7,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.buildings__wrapper {
+  display: flex;
+  align-items: center;
+}
 .buildings {
-  min-height: 60px;
+  width: 95%;
+  margin: 0 auto;
+  min-height: 500px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
