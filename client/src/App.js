@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import NavBar from './components/NavBar';
 import EntryForm from './components/EntryForm';
 import Buildings from './components/Buildings';
 
@@ -12,15 +13,20 @@ function App() {
   }
 
   const addBldg = (atFront) => {
+    if (list.length >= 20) return;
     let arr = atFront ? [1].concat(list) : list.concat([1]);
     setList(arr);
   }
 
+  const deleteBldg = (index) => {
+    setList(list.slice(0, index).concat(list.slice(index+1)));
+  }
+
   return (
     <div className="App">
-      <h1>Sunset Hills Challenge</h1>
+      <NavBar />
       {formActive && <EntryForm setList={setList} setFormActive={setFormActive}/>}
-      <Buildings list={list} updateBldg={updateBldg} formActive={formActive} addBldg={addBldg}/>
+      <Buildings list={list} updateBldg={updateBldg} formActive={formActive} addBldg={addBldg} deleteBldg={deleteBldg}/>
     </div>
   );
 }
